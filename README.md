@@ -17,7 +17,7 @@ A custome css theme for Firefox Proton that aims to make it even better
 ![Preview](https://github.com/xmansyx/Pro-Fox/blob/main/previews/Screenshot%20from%202021-06-07%2012-51-09.png)
 ![Preview](https://github.com/xmansyx/Pro-Fox/blob/main/previews/Screenshot%20from%202021-06-07%2012-46-21.png)
 ![Preview](https://github.com/xmansyx/Pro-Fox/blob/main/previews/Screenshot%20from%202021-06-07%2012-51-24.png)
-![Preview](https://github.com/xmansyx/Pro-Fox/blob/main/previews/Screencast%20from%2006-07-2021%2012%2055%2038%20PM.png)
+![Preview](https://raw.githubusercontent.com/xmansyx/Pro-Fox/main/previews/Screencast%20from%2006-07-2021%2012%2055%2038%20PM.gif)
 
 
 ### NOTES
