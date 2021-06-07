@@ -1,8 +1,20 @@
 # pro-fox: A Firefox Theme
-![Preview](https://github.com/xmansyx/Pro-Fox/blob/main/video.gif)
+![Preview](https://github.com/xmansyx/Pro-Fox/blob/main/previews/Screenshot%20from%202021-06-07%2012-47-16.png)
+![Preview](https://github.com/xmansyx/Pro-Fox/blob/main/previews/Screenshot%20from%202021-06-07%2012-47-21.png)
+![Preview](https://github.com/xmansyx/Pro-Fox/blob/main/previews/Screenshot%20from%202021-06-07%2012-46-00.png)
+![Preview](https://github.com/xmansyx/Pro-Fox/blob/main/previews/Screenshot%20from%202021-06-07%2012-46-21.png)
 
 ## Description
 A custome css theme for Firefox Proton that aims to make it even better
++ tabs are moved under urlbar
++ centeralized url bar
++ remove (playing - paused) from tabs that are playing videos or sound
++ selected tabs are expanding and their main color changed to accent color
++ moved sound icon on top of favicon
++ enhanced and bigger menus with icons
++ supports both dark and light mode
++ more...
+
 
 ### NOTES
 + 100% working on linux.
