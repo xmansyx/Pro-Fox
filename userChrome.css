@@ -253,6 +253,7 @@
   :root {
     --arrowpanel-menublank-padding: calc(var(--arrowpanel-menuicon-padding) * 2 + 8px) !important;
     --arrowpanel-menuimageblank-padding: calc(var(--arrowpanel-menuitem-padding) - 2px) !important;
+    --urlbar-height: 45.6px !imprtant;
   }
 
   #downloadsHistory .button-text,
@@ -632,8 +633,9 @@
 
 /* Make selected tabs to bigger */
 .tabbrowser-tab[selected][fadein]:not([pinned]) {  
-  max-width: 200px !important;
-  min-width: 200px !important;
+  max-width: 250px !important;
+  min-width: 250px !important;
+  
 }
 
 /* Hide tab close button */
@@ -657,6 +659,8 @@
 
 .tab-background:is([multiselected="true"], [selected="true"]) {
   background: -moz-accent-color !important;
+  box-shadow: 0 0 7px -moz-accent-color !important;
+
 }
 .tab-background:not([multiselected="true"], [selected="true"]) {
   background: none !important;
@@ -693,21 +697,62 @@
 	transition: opacity 0.15s ease;
 }
 
+#nav-bar:not([customizing="true"]) > #nav-bar-customization-target:not(:hover) > #back-button {
+	opacity: 0;
+}
+
+#back-button {
+	transition: opacity 0.15s ease;
+}
+
+#nav-bar:not([customizing="true"]) > #nav-bar-customization-target:not(:hover) > #stop-reload-button {
+	opacity: 0;
+}
+#stop-reload-button {
+	transition: opacity 0.15s ease;
+  margin-top: 4px !important;
+}
+
+#nav-bar:not([customizing="true"]) > #nav-bar-customization-target:not(:hover) > #forward-button {
+	opacity: 0;
+}
+
+#forward-button {
+	transition: opacity 0.15s ease;
+}
+/* Remove Back button when there's nothing to go Back to */
+
+#nav-bar:not([customizing="true"]) > #nav-bar-customization-target > #back-button[disabled="true"] { 
+  opacity: 0 !important;
+}
+
+/* Remove Forward button when there's nothing to go Forward to */
+
+#nav-bar:not([customizing="true"]) > #nav-bar-customization-target > #forward-button[disabled="true"] { 
+  opacity: 0 !important; 
+}
+
 /*================== NAV BAR ==================*/
 toolbar#nav-bar {
-	background: var(--toolbar-bgcolor, black) !important;
-	box-shadow: none !important;
-	padding-bottom: 4px !important;
+	/*! background: var(--toolbar-bgcolor, black) !important; */
+	/*! box-shadow: none !important; */
+	padding-bottom: 10px !important;
+	/*! background-color: var(--tabpanel-background-color) !important; */
 }
 
 #urlbar > #urlbar-background {
-	border-radius: 4px !important;
+	border-radius: 6px !important;
 	border: 0 !important;
-	background-color: var(--toolbar-bgcolor, black) !important;
+  background-color: var(--tabpanel-background-color) !important;
+
+
 }
 #urlbar:not([focused="true"]) > #urlbar-background,
 #urlbar > #urlbar-input-container {
-	border-radius: 4px !important;
+	/*! border-radius: 10px !important; */
+}
+#urlbar[focused="true"] > #urlbar-background {
+  border : 1px solid -moz-accent-color !important;
 }
 #PersonalToolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover, .tabbrowser-arrowscrollbox:not([scrolledtostart="true"])::part(scrollbutton-up):hover, .tabbrowser-arrowscrollbox:not([scrolledtoend="true"])::part(scrollbutton-down):hover, .findbar-button:not(:-moz-any([checked="true"], [disabled="true"])):hover, toolbarbutton.bookmark-item:not(.subviewbutton):hover:not([disabled="true"]):not([open]), toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-icon, toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-text, toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-badge-stack {
 	background-color: rgba(var(--transparent-bgcolor), 0.7) !important;
@@ -730,6 +775,7 @@ box.toolbarbutton-animatable-box {
 /*================== URL BAR ==================*/
 #urlbar {
 	text-align: center !important;
+  --urlbar-height: 45.6px;
 }
 #urlbar[breakout][breakout-extend] {
 	top: 5px !important;
@@ -813,8 +859,27 @@ menupopup menuseparator
 	padding: 6px 0 !important;
 }
 
-
 .toolbarbutton-text {
     margin-left: 10px !important;
-
 }
+
+.toolbar-items{
+  background-color: var(--tabpanel-background-color) !important;
+  padding-left: 10px !important;
+}
+toolbar#nav-bar{
+  background-color: var(--tabpanel-background-color) !important;
+}
+
+.browser-toolbar:not(.titlebar-color){
+  background-image: none !important;
+}
+#urlbar-results{
+  padding: 15px !important;
+}
+
+#urlbar[breakout],
+#urlbar[breakout][breakout-extend] {
+  --urlbar-height: 46px !important;
+}
+
