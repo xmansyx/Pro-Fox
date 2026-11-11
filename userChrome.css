@@ -86,10 +86,10 @@
 /** PictureInPicture Tab - Show PIP Icon ************************************/
 .tab-icon-sound[pictureinpicture]:not([pinned]) {
     /* Shape */
-    display: -moz-inline-box !important;
+    display: inline-flex !important;
     width: 14px;
     height: 14px;
-    -moz-box-ordinal-group: 2 !important;
+    order: 2 !important;
 
     /* Color */
     fill: currentColor;
@@ -107,7 +107,7 @@
 /* Close Button's position */
 .tabbrowser-tab[pictureinpicture]:not([pinned]) .tab-close-button {
     margin-left: 7px !important;
-    -moz-box-ordinal-group: 2 !important;
+    order: 2 !important;
 }
 
 .tabbrowser-tab[pictureinpicture]:not([pinned]):hover .tab-close-button {
@@ -193,8 +193,7 @@
 
 :root[uidensity=compact] .tabbrowser-tab:is([image], [pinned])[usercontextid]>.tab-stack>.tab-content[attention]:not([selected="true"]),
 :root[uidensity=compact] .tabbrowser-tab[usercontextid]>.tab-stack>.tab-content[pinned][titlechanged]:not([selected="true"]) {
-    /* Original: radial-gradient(circle, var(--attention-icon-color), var(--attention-icon-color) 2px, transparent 2px); */
-    var(--dotted-identity-image) !important;
+    background-image: var(--dotted-identity-image), var(--dotted-identity-image), var(--dotted-identity-image) !important;
     background-position-x: 30%, 50%, 70% !important;
 }
 
@@ -206,7 +205,7 @@
 
 :root[uidensity=compact] .tabbrowser-tab:is([image], [pinned])[usercontextid]:is([soundplaying], [muted], [activemedia-blocked])>.tab-stack>.tab-content[attention]:not([selected="true"]),
 :root[uidensity=compact] .tabbrowser-tab[usercontextid]:is([soundplaying], [muted], [activemedia-blocked])>.tab-stack>.tab-content[pinned][titlechanged]:not([selected="true"]) {
-    var(--dotted-identity-image) !important;
+    background-image: var(--dotted-identity-image), var(--dotted-identity-image), var(--dotted-identity-image) !important;
     background-position-x: calc(30% - 1px), calc(50% - 1px), calc(70% - 1px) !important;
 }
 
@@ -305,7 +304,7 @@ menupopup>menu {
 
 #appMenu-multiView .subviewbutton::before,
 #appMenu-proton-update-banner::before {
-    display: -moz-inline-box;
+    display: inline-flex;
     margin-inline-end: var(--arrowpanel-menuicon-padding);
     width: 16px !important;
     height: 16px !important;
@@ -342,9 +341,9 @@ menupopup>menu {
 
 /* Panel - Main */
 #appMenu-proton-addon-banners>.addon-banner-item>.toolbarbutton-icon {
-    display: -moz-inline-box !important;
+    display: inline-flex !important;
     margin-inline-start: var(--arrowpanel-menuicon-padding);
-    -moz-box-ordinal-group: 0 !important;
+    order: 0 !important;
 }
 
 #appMenu-proton-update-banner::before {
@@ -442,13 +441,13 @@ menupopup>menu {
 
 /* Default */
 #fxa-menu-avatar {
-    display: -moz-inline-box !important;
+    display: inline-flex !important;
     margin-inline-end: var(--arrowpanel-menuitem-padding);
 }
 
 .syncNowBtn {
     visibility: visible !important;
-    -moz-box-ordinal-group: 1 !important;
+    order: 1 !important;
     margin-inline-end: var(--arrowpanel-menuicon-padding);
 }
 
@@ -481,14 +480,14 @@ menupopup>menu {
 /* Change Separator */
 #PanelUI-fxa-menu::before {
     content: "";
-    display: -moz-box;
+    display: flex;
     border-bottom: 1px solid var(--panel-separator-color);
     margin: var(--panel-separator-margin);
     padding: 0;
 }
 
 #PanelUI-fxa-menu> :first-child {
-    -moz-box-ordinal-group: 0;
+    order: 0;
 }
 
 #PanelUI-sign-out-separator {
@@ -757,8 +756,7 @@ panelMenuBookmarkThisPage[starred] {
 }
 
 .tab-background:is([multiselected="true"], [selected="true"]) {
-    background: -moz-accent-color !important;
-    /*   box-shadow: 0 0 7px -moz-accent-color !important; */
+    background: AccentColor !important;
 
 }
 
@@ -844,13 +842,13 @@ toolbar#nav-bar {
 }
 
 #urlbar[focused="true"]>#urlbar-background {
-    border: 1px solid -moz-accent-color !important;
+    border: 1px solid AccentColor !important;
 }
 
 #PersonalToolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover,
 .tabbrowser-arrowscrollbox:not([scrolledtostart="true"])::part(scrollbutton-up):hover,
 .tabbrowser-arrowscrollbox:not([scrolledtoend="true"])::part(scrollbutton-down):hover,
-.findbar-button:not(:-moz-any([checked="true"], [disabled="true"])):hover,
+.findbar-button:not(:is([checked="true"], [disabled="true"])):hover,
 toolbarbutton.bookmark-item:not(.subviewbutton):hover:not([disabled="true"]):not([open]),
 toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover>.toolbarbutton-icon,
 toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:active):hover>.toolbarbutton-text,
@@ -858,13 +856,13 @@ toolbar .toolbarbutton-1:not([disabled="true"]):not([checked]):not([open]):not(:
     background-color: rgba(var(--transparent-bgcolor), 0.7) !important;
 }
 
-#PersonalToolbar .toolbarbutton-1:not([disabled="true"]):-moz-any([open], [checked], :hover:active),
-.findbar-button:not([disabled="true"]):-moz-any([checked="true"], :hover:active),
+#PersonalToolbar .toolbarbutton-1:not([disabled="true"]):is([open], [checked], :hover:active),
+.findbar-button:not([disabled="true"]):is([checked="true"], :hover:active),
 toolbarbutton.bookmark-item:not(.subviewbutton):hover:active:not([disabled="true"]),
 toolbarbutton.bookmark-item[open="true"],
-toolbar .toolbarbutton-1:not([disabled="true"]):-moz-any([open], [checked], :hover:active)>.toolbarbutton-icon,
-toolbar .toolbarbutton-1:not([disabled="true"]):-moz-any([open], [checked], :hover:active)>.toolbarbutton-text,
-toolbar .toolbarbutton-1:not([disabled="true"]):-moz-any([open], [checked], :hover:active)>.toolbarbutton-badge-stack {
+toolbar .toolbarbutton-1:not([disabled="true"]):is([open], [checked], :hover:active)>.toolbarbutton-icon,
+toolbar .toolbarbutton-1:not([disabled="true"]):is([open], [checked], :hover:active)>.toolbarbutton-text,
+toolbar .toolbarbutton-1:not([disabled="true"]):is([open], [checked], :hover:active)>.toolbarbutton-badge-stack {
     background-color: rgba(var(--transparent-bgcolor), 0.2) !important;
 }
 
@@ -918,7 +916,7 @@ box.toolbarbutton-animatable-box {
 }
 
 #urlbar-input-container {
-    border: 1px solid -moz-accent-color;
+    border: 1px solid AccentColor;
 }
 
 /* Do not animate */
@@ -938,7 +936,7 @@ box.toolbarbutton-animatable-box {
     --uc-titlebar-padding: 0px;
 }
 
-@media (-moz-os-version: windows-win10) {
+@media (-moz-platform: windows) {
     :root[sizemode="maximized"][tabsintitlebar] {
         --uc-titlebar-padding: 8px
     }
@@ -954,8 +952,8 @@ box.toolbarbutton-animatable-box {
 
 }
 
-/* Mac specific. You should set that font-smoothing pref to true if you are on any platform where window controls are on left */
-@supports -moz-bool-pref("layout.css.osx-font-smoothing.enabled") {
+/* macOS puts the window controls on the left */
+@media (-moz-platform: macos) {
     :root {
         --uc-titlebar-padding: 0px !important
     }
@@ -983,8 +981,8 @@ box.toolbarbutton-animatable-box {
 }
 
 #titlebar {
-    -moz-box-ordinal-group: 2;
-    -moz-appearance: none !important;
+    order: 2;
+    appearance: none !important;
     --tabs-navbar-shadow-size: 13px;
 }
 
