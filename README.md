@@ -1,11 +1,11 @@
 # pro-fox: A Firefox Theme
 
 ## Description
-A custome css theme for Firefox Proton that aims to make it even better
-+ tabs are moved under urlbar
-+ centeralized url bar
+A custom CSS theme for Firefox Proton that aims to make it even better
++ tabs are moved under the URL bar
++ centered URL bar
 + remove (playing - paused) from tabs that are playing videos or sound
-+ selected tabs are expanding and their main color changed to accent color
++ selected tabs expand and use the system accent color
 + moved sound icon on top of favicon
 + enhanced and bigger menus with icons
 + supports both dark and light mode
@@ -22,34 +22,30 @@ A custome css theme for Firefox Proton that aims to make it even better
 ![Preview](https://raw.githubusercontent.com/xmansyx/Pro-Fox/main/previews/Screencast%20from%2006-07-2021%2012%2055%2038%20PM.gif)
 
 
-### NOTES
-+ 100% working on linux.
-+ Untested on macOS.
+### Notes
++ Developed and tested on Linux.
++ Windows and macOS window controls are handled with `-moz-platform` media queries.
++ Firefox changes its internal UI often, so a Firefox update can break parts of any `userChrome.css` theme. Please open an issue with your Firefox version if something looks wrong.
 
 ### Manual Installation
 
 1. Open `about:config` page.
-2. A dialog will warn you, but ignore it, ~~just do it~~ press the `I accept the risk!` button.
-3. Search for these:
+2. Press the `Accept the Risk and Continue` button.
+3. Set these preferences to `true`:
 
-	+ **`toolkit.legacyUserProfileCustomizations.stylesheets`**
-	+ **`layers.acceleration.force-enabled`**
-	+ **`gfx.webrender.all`**
-	+ **`gfx.webrender.enabled`**
-	+ **`layout.css.backdrop-filter.enabled`**
-	+ **`svg.context-properties.content.enabled`**
+	+ **`toolkit.legacyUserProfileCustomizations.stylesheets`** (lets Firefox load `userChrome.css`)
+	+ **`svg.context-properties.content.enabled`** (lets the menu icons follow the theme color)
 
-4. Go to your Firefox profile.
+4. Open your Firefox profile folder: go to `about:support` and click **Open Folder** next to **Profile Folder**.
 
-	+ Linux - `$HOME/.mozilla/firefox/XXXXXXX.default-XXXXXX/`.
-	+ Windows 10 - `C:\Users\<USERNAME>\AppData\Roaming\Mozilla\Firefox\Profiles\XXXXXXX.default-XXXXXX`.
-	+ macOS - `Users/<USERNAME>/Library/Application Support/Firefox/Profiles/XXXXXXX.default-XXXXXXX`.
+	+ Linux - `$HOME/.mozilla/firefox/XXXXXXX.default-XXXXXX/`
+	+ Windows - `C:\Users\<USERNAME>\AppData\Roaming\Mozilla\Firefox\Profiles\XXXXXXX.default-XXXXXX`
+	+ macOS - `/Users/<USERNAME>/Library/Application Support/Firefox/Profiles/XXXXXXX.default-XXXXXXX`
 
-5. Create a folder and name it **`chrome`**, then assuming that you already have cloned this repo, just copy the theme to `chrome` folder.
+5. Create a folder named **`chrome`** in the profile folder and copy `userChrome.css` from this repo into it.
 6. Restart Firefox.
-7. Finally, you can now change whatever color mode you want in the Cusomization Window.
+7. Pick a color mode in **Settings → General → Website appearance**, or choose a theme in **Add-ons and themes**:
 
-	+ Default - Uses system colors, but uses the theme's layout.
-	+ Dark - Dark colorscheme. Good for the night.
-	+ Light - Bright colorscheme. Good for killing the eyes.
-
+	+ System theme - follows your OS colors with this theme's layout.
+	+ Dark - dark color scheme. Good for the night.
+	+ Light - bright color scheme.
